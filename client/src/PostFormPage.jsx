@@ -40,13 +40,13 @@ const PostFormPage = () => {
     formData.append("hashtags", hashtags);
 
     if (isEdit) {
-      await fetch(`http://localhost:5000/api/posts/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
         body: formData
       });
     } else {
-      await fetch("http://localhost:5000/api/posts", {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/posts`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData

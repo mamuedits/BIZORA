@@ -143,7 +143,7 @@ const DashboardPage = () => {
                   <img
                     src={
                       post.ownerId?.avatar
-                        ? `http://localhost:5000${post.ownerId.avatar}`
+                        ? `${import.meta.env.VITE_API_URL}${post.ownerId.avatar}`
                         : "/images/default-profile.png"
                     }
                     className="w-6 h-6 rounded-full border"
@@ -156,7 +156,7 @@ const DashboardPage = () => {
                 </div>
 
                 <img
-                  src={`http://localhost:5000${post.image}`}
+                  src={`${import.meta.env.VITE_API_URL}${post.image}`}
                   alt="post"
                   className="w-full h-48 object-cover rounded"
                   onClick={() => navigate("/posts")}
@@ -249,7 +249,7 @@ const DashboardPage = () => {
             <img
               src={
                 user?.avatar
-                  ? `http://localhost:5000${user.avatar}`
+                  ? `${import.meta.env.VITE_API_URL}${user.avatar}`
                   : "/images/default-profile.png"
               }
               className="w-20 h-20 rounded-full mx-auto border"
@@ -308,7 +308,7 @@ const DashboardPage = () => {
                     <img
                       src={
                         u.avatar
-                          ? `http://localhost:5000${u.avatar}`
+                          ? `${import.meta.env.VITE_API_URL}${u.avatar}`
                           : "/images/default-profile.png"
                       }
                       className="w-8 h-8 rounded-full border"
@@ -347,7 +347,7 @@ const DashboardPage = () => {
               <img
                 src={
                   admin.avatar
-                    ? `http://localhost:5000${admin.avatar}`
+                    ? `${import.meta.env.VITE_API_URL}${admin.avatar}`
                     : "/images/default-profile.png"
                 }
                 alt="admin"
