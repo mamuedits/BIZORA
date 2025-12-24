@@ -190,7 +190,7 @@ const MessagesPage = () => {
             >
               <div className="flex gap-3 items-center">
                 <img
-                  src={u.avatar ? `http://localhost:5000${u.avatar}` : "/images/default-profile.png"}
+                  src={u.avatar ? `${import.meta.env.VITE_API_URL}${u.avatar}` : "/images/default-profile.png"}
                   className="w-10 h-10 rounded-full"
                   alt=""
                 />
@@ -220,7 +220,7 @@ const MessagesPage = () => {
           <>
             <div className="p-4 border-b border-gray-800 flex items-center gap-3">
               <img
-                src={chatUser.avatar ? `http://localhost:5000${chatUser.avatar}` : "/images/default-profile.png"}
+                src={chatUser.avatar ? `${import.meta.env.VITE_API_URL}${chatUser.avatar}` : "/images/default-profile.png"}
                 className="w-10 h-10 rounded-full cursor-pointer"
                 onClick={() => navigate(`/profile/${chatUser._id}`)}
                 alt=""

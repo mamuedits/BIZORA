@@ -64,7 +64,7 @@ const NavBar = () => {
             <img
               src={
                 user.avatar
-                  ? `http://localhost:5000${user.avatar}`
+                  ? `${import.meta.env.VITE_API_URL}${user.avatar}`
                   : "/images/default-profile.png"
               }
               alt="Profile"

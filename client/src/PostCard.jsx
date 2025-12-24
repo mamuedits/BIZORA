@@ -47,7 +47,7 @@ const PostCard = ({ post,user, onLike, onDelete }) => {
       <div className="p-3 font-semibold text-left flex items-center gap-2 ">
         <img src={
                 post?.ownerId.avatar
-                  ? `http://localhost:5000${post.ownerId.avatar}`
+                  ? `${import.meta.env.VITE_API_URL}${post.ownerId.avatar}`
                   : "/images/default-profile.png"
               }
               alt="Profile"
@@ -106,7 +106,7 @@ const PostCard = ({ post,user, onLike, onDelete }) => {
 
       {/* Image */}
       <img
-        src={`http://localhost:5000${post.image}`}
+        src={`${import.meta.env.VITE_API_URL}${post.image}`}
         alt="post"
         className="w-full max-h-[450px] object-cover border rounded-md"
       />
