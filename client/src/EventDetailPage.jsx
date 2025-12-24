@@ -61,7 +61,7 @@ const EventDetailPage = () => {
 
         {event.bannerUrl && (
           <img
-            src={`http://localhost:5000${event.bannerUrl}`}
+            src={`${import.meta.env.VITE_API_URL}${event.bannerUrl}`}
             alt="banner"
             className="w-full h-[65vh] object-cover p-2 rounded-2xl"
           />

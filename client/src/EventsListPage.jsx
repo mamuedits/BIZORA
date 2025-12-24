@@ -35,7 +35,7 @@ const EventsListPage = () => {
           >
             {ev.bannerUrl && (
               <img
-                src={`http://localhost:5000${ev.bannerUrl}`}
+                src={`${import.meta.env.VITE_API_URL}${ev.bannerUrl}`}
                 alt="event"
                 className="w-full h-[45vh] object-cover rounded-2xl p-2"
               />
