@@ -133,7 +133,7 @@ const CommentsPage = () => {
                       {timeAgo(comment.createdAt)}
                     </span>
                   </div>
-                  <p className="text-sm">{comment.text}</p>
+                  <p className="text-sm text-left">{comment.text}</p>
                 </div>
               </div>
 
