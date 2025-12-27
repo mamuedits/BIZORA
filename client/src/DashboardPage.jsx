@@ -143,7 +143,7 @@ const DashboardPage = () => {
                   <img
                     src={
                       post.ownerId?.avatar
-                        ? `${import.meta.env.VITE_API_URL}${post.ownerId.avatar}`
+                        ? post.ownerId.avatar
                         : "/images/default-profile.png"
                     }
                     className="w-6 h-6 rounded-full border"
@@ -202,13 +202,11 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          {/* ================= NOTIFICATIONS ================= */}
           <div className="bg-gray-900 rounded-xl p-4">
             <h3 className="font-semibold mb-4">Notifications</h3>
 
             <div className="space-y-3 text-sm text-gray-300">
 
-              {/* UNREAD MESSAGES */}
               {totalUnreadMessages > 0 && (
                 <div className="flex items-center gap-2">
                   <span className="text-red-400">●</span>
@@ -249,7 +247,7 @@ const DashboardPage = () => {
             <img
               src={
                 user?.avatar
-                  ? `${import.meta.env.VITE_API_URL}${user.avatar}`
+                  ? user.avatar
                   : "/images/default-profile.png"
               }
               className="w-20 h-20 rounded-full mx-auto border"
@@ -290,7 +288,7 @@ const DashboardPage = () => {
             ))}
           </div>
 
-          {/* MESSAGES */}
+
           <div className="bg-gray-900 h-[45vh] overflow-y-auto no-scrollbar rounded-xl">
             <h3 className="font-semibold sticky top-0 py-4 bg-gray-900 ">Unread Messages</h3>
 
@@ -303,12 +301,12 @@ const DashboardPage = () => {
                   onClick={() => navigate("/messages")}
                   className="flex justify-between items-center gap-3 cursor-pointer hover:bg-gray-800 p-2 rounded"
                 >
-                  {/* LEFT SIDE */}
+
                   <div className="flex items-center gap-3">
                     <img
                       src={
                         u.avatar
-                          ? `${import.meta.env.VITE_API_URL}${u.avatar}`
+                          ? u.avatar
                           : "/images/default-profile.png"
                       }
                       className="w-8 h-8 rounded-full border"
@@ -320,7 +318,7 @@ const DashboardPage = () => {
                     </div>
                   </div>
 
-                  {/* RIGHT SIDE – UNREAD COUNT */}
+
                   <span className="bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full text-center">
                     {unreadCount}
                   </span>
@@ -332,7 +330,7 @@ const DashboardPage = () => {
 
         </div>
       </div>
-      {/* ================= ADMIN PANEL ================= */}
+
       <div className="mt-6 bg-gray-950 rounded-xl p-6">
         <h2 className="text-lg font-semibold mb-6 text-center">
           Admin Panel
@@ -347,7 +345,7 @@ const DashboardPage = () => {
               <img
                 src={
                   admin.avatar
-                    ? `${import.meta.env.VITE_API_URL}${admin.avatar}`
+                    ? admin.avatar
                     : "/images/default-profile.png"
                 }
                 alt="admin"

@@ -29,7 +29,7 @@ const PublicProfilePage = () => {
         <img
           src={
             profile.avatar
-              ? `${import.meta.env.VITE_API_URL}${profile.avatar}`
+              ? profile.avatar
               : "/images/default-profile.png"
           }
           alt="Profile"

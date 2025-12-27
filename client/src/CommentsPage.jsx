@@ -117,7 +117,7 @@ const CommentsPage = () => {
                 <img
                   src={
                     comment.userId.avatar
-                      ? `${import.meta.env.VITE_API_URL}${comment.userId.avatar}`
+                      ? comment.userId.avatar
                       : "/images/default-profile.png"
                   }
                   className="w-8 h-8 rounded-full"

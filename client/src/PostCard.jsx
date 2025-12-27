@@ -48,7 +48,7 @@ const PostCard = ({ post,user, onLike, onDelete }) => {
       <div className="p-3 font-semibold text-left flex items-center gap-2 ">
         <img src={
                 post?.ownerId.avatar
-                  ? `${import.meta.env.VITE_API_URL}${post.ownerId.avatar}`
+                  ? post.ownerId.avatar
                   : "/images/default-profile.png"
               }
               alt="Profile"
