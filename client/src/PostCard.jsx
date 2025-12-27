@@ -9,6 +9,7 @@ const PostCard = ({ post,user, onLike, onDelete }) => {
 
   const [menuOpen, setMenuOpen] = useState(null);
   const isOwner = post.ownerId._id === user.id;
+  const isAdmin = user.role === "admin";
   const navigate = useNavigate();
   const { token } = useAuth();
   const [expanded, setExpanded] = useState(false);  
@@ -74,7 +75,7 @@ const PostCard = ({ post,user, onLike, onDelete }) => {
                     View Profile
                   </button>
 
-                  {isOwner ? (
+                  {isOwner || isAdmin ? (
                     <>
                       <button
                         className="block px-3 py-2 hover:bg-gray-700 w-full text-left"

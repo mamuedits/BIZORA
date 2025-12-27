@@ -102,7 +102,7 @@ router.put(
         return res.status(404).json({ message: "Post not found" });
       }
 
-      if (post.ownerId.toString() !== req.user._id.toString()) {
+      if (post.ownerId.toString() !== req.user._id.toString() && req.user.role !== "admin") {
         return res.status(403).json({ message: "Not authorized" });
       }
 
@@ -256,7 +256,7 @@ router.delete("/:id", authMiddleware, async (req, res) => {
     const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: "Post not found" });
 
-    if (post.ownerId.toString() !== req.user._id.toString()) {
+    if (post.ownerId.toString() !== req.user._id.toString() && req.user.role !== "admin") {
       return res.status(403).json({ message: "Not authorized" });
     }
 
