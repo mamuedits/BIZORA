@@ -49,7 +49,7 @@ router.delete("/:id", authMiddleware, async (req, res) => {
   }
 
   // 🔐 OWNER CHECK
-  if (event.organizerId.toString() !== req.user._id.toString()) {
+  if (event.organizerId.toString() !== req.user._id.toString() && req.user.role !== "admin") {
     return res.status(403).json({ message: "Not authorized" });
   }
 
@@ -65,7 +65,7 @@ router.delete("/:id", authMiddleware, async (req, res) => {
 router.put(
   "/:id",
   authMiddleware,
-  upload.single("banner"), // 🔴 THIS WAS MISSING
+  upload.single("banner"),
   async (req, res) => {
     const event = await Event.findById(req.params.id);
 
@@ -73,7 +73,8 @@ router.put(
       return res.status(404).json({ message: "Event not found" });
     }
 
-    if (event.organizerId.toString() !== req.user._id.toString()) {
+    if (event.organizerId.toString() !== req.user._id.toString() &&
+        req.user.role !== "admin") {
       return res.status(403).json({ message: "Not authorized" });
     }
 
