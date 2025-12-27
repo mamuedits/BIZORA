@@ -15,7 +15,7 @@ const PostCard = ({ post,user, onLike, onDelete }) => {
 
 
   const liked = post.likes.some(l =>
-    (typeof l === "string" ? l : l._id) === user.id
+    (typeof l === "string" ? l : l._id) === user._id
   );
 
   console.log(liked);

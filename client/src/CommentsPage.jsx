@@ -85,7 +85,7 @@ const CommentsPage = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-black min-h-screen px-3 py-4 text-white">
+    <div className="max-w-lg mx-auto bg-black max-h-screen px-3 py-4 text-white">
       {/* INPUT */}
       <div className="sticky top-0 bg-black z-10 pb-3">
         <div className="flex gap-2 items-center bg-gray-900 rounded-xl p-2">
