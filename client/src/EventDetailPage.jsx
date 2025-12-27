@@ -145,9 +145,9 @@ const EventDetailPage = () => {
           {message && (
             <p className="text-sm text-green-400">{message}</p>
           )}
-
+  
           {/* OWNER ACTIONS */}
-          {user?.id === event.organizerId?._id && (
+          {user?.id === event.organizerId?._id || user?.role === "admin"(
             <div className="flex gap-3 justify-end pt-6">
               <button
                 onClick={handleEditEvent}
