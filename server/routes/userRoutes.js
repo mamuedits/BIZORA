@@ -1,7 +1,7 @@
 import express from "express";
 import User from "../models/User.js";
 import { authMiddleware } from "../middleware/auth.js";
-import upload from "../middleware/upload.js";
+import upload from "../middleware/uploadcloudinary.js";
 
 const router = express.Router();
 
@@ -45,7 +45,7 @@ router.put(
       console.log(req.file);
       console.log(req.body);
 
-      const avatarPath = `/uploads/${req.file.filename}`;
+      const avatarPath = req.file.path;
 
       const updatedUser = await User.findByIdAndUpdate(
         req.user._id,
