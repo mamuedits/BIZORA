@@ -100,7 +100,7 @@ const ProfilePage = () => {
 
         <div className="flex flex-col items-center mb-6">
           <img
-            src={profile.avatar ? `${import.meta.env.VITE_API_URL}${profile.avatar}` : "/images/default-profile.png"}
+            src={profile.avatar ? profile.avatar : "/images/default-profile.png"}
             alt="Profile"
             className="w-32 h-32 rounded-full object-cover border border-gray-700"
           />
